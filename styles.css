@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: darkcyan;
+}
+.container{
+    width: 80%;
+    height: 80vh;
+    padding: 1em;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: silver;
+    opacity: 0.9;
+}
+.item{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    display: none;
+}
+.buttons{
+    display: flex;
+    justify-content: space-evenly;   
+}
+.buttons>input{
+    font-size: large;
+    padding: 0.5em;
+    width: 30%;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+.reveal-answer{
+    text-align: justify;
+    text-indent: 3em;
+    transform: translateY(50px);
+    visibility: hidden;
+    font-family: 'Sedgwick Ave', cursive;
+}
+.choices{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.choices>div{
+    display: flex;
+    padding-left: 1em;
+    width: 100%;
+    margin-top: 1em;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 1.3em;
+}
+.choices>div>input{
+    transform: translateY(0.6em);
+    margin-right: 1em;
+}
+.show{
+    transition-duration: 1s;
+    transform: translateY(0);
+    visibility: visible;
+}
+.score{
+    display: grid;
+    place-items: center;
+}
+.question>h1{
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'Abril Fatface', cursive;
+}
+@media (min-width:600px){
+    .choices{
+        flex-direction: row;
+    }
+    .reveal-answer{
+        text-align: center;
+    }
+    .question>h1{
+        font-size: 2em;
+    }
+}
