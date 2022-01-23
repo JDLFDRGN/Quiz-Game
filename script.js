@@ -2,6 +2,7 @@ let questions = document.querySelectorAll('.item');
 let next = document.querySelectorAll('.next');
 let reveal = document.querySelectorAll('.reveal-answer');
 let result = document.querySelector('.result');
+let submit = document.querySelectorAll('.submit');
 let correctAnswers = ['A','B','C','C','B'];
 let score = 0, page=0;
 
@@ -19,6 +20,7 @@ questions.forEach(e=>{
     questions[page].style.display="flex";
     e.addEventListener('submit',(f)=>{
         f.preventDefault();
+        submit[page].disabled=true;
         let getClassName = e.className.replace(' item','');
         let selected = document.querySelector(`.${getClassName} input[type="radio"]:checked`);
         let choices = document.querySelectorAll(`.${getClassName} input[type="radio"]`);
